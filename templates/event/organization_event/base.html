@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block side_nav %}
+{% include "organization/organization/menu.html" with object=object.organization %}
+<hr>
+{% include "event/organization_event/menu.html" %}
+{% endblock %}
+{% block app_base_content %}
+<h1>{{ object }}</h1>
+<hr>
+{% endblock %}

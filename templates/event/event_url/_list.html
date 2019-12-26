@@ -1,0 +1,22 @@
+{% if not object_list %}
+No URLs
+{% else %}
+<div class="table-responsive ">
+    <table class="table table-sm table-hover table-stripped">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Website URL</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for object in object_list %}
+        <tr>
+            <td>{{ object.name }}</td>
+            <td><a href={{ object.website_url }}>{{ object.website_url }}</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}

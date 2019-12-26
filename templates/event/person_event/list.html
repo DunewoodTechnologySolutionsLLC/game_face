@@ -1,0 +1,13 @@
+{% extends "../../base.html" %}
+{% block side_nav %}
+<!--{% include "organization/organization/menu.html" %}-->
+{% endblock %}
+{% block side-nav-row %}
+{% block content %}
+<h1>{{ user }}</h1>
+<hr>
+<div class="br-10"></div>
+<h2>Planner</h2>
+{% include 'event/person_event/_list.html' %}
+{% endblock %}
+{% endblock %}

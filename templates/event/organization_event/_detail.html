@@ -1,0 +1,29 @@
+<h3>Detail</h3>
+<div class="col-sm-7">
+    {% include 'event/event/_detail.html' %}
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h3>Event URLs</h3>
+        {% include 'event/event_url/_list.html' with object_list=object.eventurl_set.all %}
+    </div>
+    <div class="col-md-6">
+        <h3>Event Resources</h3>
+        {% include 'event/event_resource/_list.html' with object_list=object.eventresource_set.all %}
+    </div>
+</div>
+<div class="br-30"></div>
+<div class="row">
+    <div class="col-md-12">
+        <h3>Event Agenda</h3>
+        {% include 'event/event_agenda_item/_list.html' with object_list=object.eventagendaitem_set.all %}
+    </div>
+</div>
+<div class="br-30"></div>
+<div class="row">
+    <div class="col-md-12">
+        <h3>Event Notes</h3>
+        {% include 'message/event_message/_list.html' with object_list=object.eventmessage_set.all %}
+    </div>
+</div>

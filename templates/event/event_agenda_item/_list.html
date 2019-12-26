@@ -1,0 +1,26 @@
+{% if not object_list %}
+No agenda for this event
+{% else %}
+<div class="table-responsive ">
+    <table class="table table-sm table-hover table-stripped">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Duration</th>
+            <th>Subject</th>
+            <th style="width: 75%;">Body</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for object in object_list %}
+        <tr>
+            <td>{{ object.order }}</td>
+            <td>{{ object.max_meet_time }}</td>
+            <td>{{ object.subject }}</td>
+            <td>{{ object.body }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}

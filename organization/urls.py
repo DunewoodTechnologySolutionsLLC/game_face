@@ -13,6 +13,7 @@ urlpatterns = [
             path('', organization_views.OrganizationDetailView.as_view(), name='organization'),
             path('dashboard/', organization_views.OrganizationDashboardTemplateView.as_view(), name='dashboard'),
             path('building/', organization_views.OrganizationBuildingListView.as_view(), name='buildings'),
+            path('event/', event_views.OrganizationEventListView.as_view(), name='event'),
         ])),
     ], 'organization'), namespace='organization')),
     path('organization_building/', include(([
@@ -20,7 +21,7 @@ urlpatterns = [
         path('<organization_building_pk>/', include([
             path('', organization_views.OrganizationBuildingDetailView.as_view(), name='organization_building'),
             path('dashboard/', organization_views.OrganizationBuildingDashboardTemplateView.as_view(), name='dashboard'),
-            path('organization_event/', event_views.BuildingEventListView.as_view(), name='event'),
+            path('event/', event_views.BuildingEventListView.as_view(), name='event'),
         ])),
     ], 'organization_building'), namespace='organization_building'))
 ]

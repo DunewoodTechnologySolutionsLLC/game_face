@@ -1,0 +1,22 @@
+{% if not object_list %}
+No Resources for this event.
+{% else %}
+<div class="table-responsive ">
+    <table class="table table-sm table-hover table-stripped">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Quantity Needed</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for object in object_list %}
+        <tr>
+            <td>{{ object.resource.name }}</td>
+            <td>{{ object.quantity_needed }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}

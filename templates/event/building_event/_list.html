@@ -1,0 +1,25 @@
+{% if not object_list %}
+No events
+{% else %}
+<table class="table">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Start Date/Time</th>
+        <th>End Date/Time</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for object in object_list %}
+    <tr>
+        <td><a href={{ object.get_absolute_url }}>{{ object.name }}</a></td>
+        <td>{{ object.description }}</td>
+        <td>{{ object.date_time_start }}</td>
+        <td>{{ object.date_time_end }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endif %}

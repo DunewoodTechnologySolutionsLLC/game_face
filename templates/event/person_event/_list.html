@@ -1,0 +1,72 @@
+{% if not object_list %}
+No notes for this event.
+{% else %}
+<table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+    <tr>
+        <th>Sunday</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for mkey, mvalues in object_list.items %}
+    <tr>
+        {% for key, values in mvalues.items %}
+        <td>
+            {% if 'today' in key %}
+                <h5 class="badge badge-pill badge-success">{{ key.0 }}</h5>
+            {% else %}
+                <h5 class="badge badge-pill badge-info">{{ key.0 }}</h5>
+            {% endif %}
+            {% for key2, values2 in values.items %}
+            <h6 class="mb-0">{{ key2 }}</h6>
+            <ul>
+                {% for item in values2 %}
+                <li>
+                    <small>{{ item.description }}</small>
+                </li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+        </td>
+    {% endfor %}
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+<!--<div class="row">-->
+    <!--{% for key, values in object_list.items %}-->
+    <!--<div class="col-md-2">-->
+        <!--<div class="list-group">-->
+            <!--{% for key2, values2 in values.items %}-->
+            <!--{% if forloop.first %}-->
+            <!--<h4 class="mb-1">{{ key.month }}/{{ key.day }} </h4>-->
+            <!--{% endif %}-->
+            <!--<div class="list-group-item list-group-item-action flex-column align-items-start">-->
+                <!--<div class="d-flex w-100 justify-content-between">-->
+                    <!--<h5 class="mb-0">{{ key2 }}</h5>-->
+                <!--</div>-->
+                <!--<ul>-->
+                    <!--{% for item in values2 %}-->
+                    <!--<li>-->
+                        <!--<small>{{ item.description }}</small>-->
+                    <!--</li>-->
+                    <!--{% endfor %}-->
+                <!--</ul>-->
+
+            <!--</div>-->
+            <!--{% endfor %}-->
+            <!--<div class="br-30"></div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--{% endfor %}-->
+<!--</div>-->
+{% endif %}
