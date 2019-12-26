@@ -1,0 +1,26 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Mailing Address</th>
+        <th>Website URL</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% if not object_list %}
+    No organizations
+    {% else %}
+    {% for object in object_list %}
+    <tr>
+        <td><a href={{ object.get_absolute_url }}>{{ object.name }}</a></td>
+        <td>{{ object.mailing_address }}</td>
+        <td><a href={{ object.website_url }}>{{ object.website_url }}</a></td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+    <tr>
+
+    </tr>
+    </tbody>
+</table>

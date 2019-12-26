@@ -1,0 +1,11 @@
+{% extends "organization/organization/base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-12 btn-group-horizontal">
+        <h2>Buildings
+        <a type="button" class="btn btn-sm btn-primary pull-right" href="{% url 'organization_building:create' %}?organization_pk={{ object.pk }}">Add</a>
+        </h2>
+    </div>
+</div>
+{% include 'organization/organization_building/_list.html' %}
+{% endblock %}

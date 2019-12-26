@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="post">{% csrf_token %}
+    <a href="{% url 'core:address:create' %}">Add Address</a>
+    {{ form.as_p }}
+    <input type="submit" value="Save" />
+</form>
+{% endblock %}

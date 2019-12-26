@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block side_nav %}
+{% include "organization/organization/menu.html" with object=object.organization %}
+<hr>
+{% include "organization/organization_building/menu.html" %}
+{% endblock %}
+{% block app_base_content %}
+<h1>{{ object }}</h1>
+<small class="text-muted">
+    <ul class="list-inline">
+        <li class="list-inline-item">{{ object.address }}</li>
+    </ul>
+</small>
+<hr>
+<div class="br-10"></div>
+{% endblock %}

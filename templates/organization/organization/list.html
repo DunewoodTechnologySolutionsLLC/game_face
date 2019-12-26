@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-12 btn-group-horizontal">
+        <h2>Organizations
+        <a type="button" class="btn btn-sm btn-primary pull-right" href="{% url 'organization:organization:create' %}">Create</a>
+        </h2>
+    </div>
+</div>
+{% include "organization/organization/_list.html" %}
+{% endblock %}

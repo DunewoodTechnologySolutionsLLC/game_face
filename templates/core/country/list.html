@@ -1,0 +1,25 @@
+{% extends "../../base.html" %}
+
+{% block content %}
+<table class="table">
+    <thead>
+    <tr>
+        {% for object in object_list %}
+        {% if object_list.first %}
+        <th>{{ object|title }}</th>
+        {% endif %}
+        {% endfor %}
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for country in object_list %}
+    <td>{{ country }}</td>
+    {% endfor %}
+    <tr>
+
+    </tr>
+    </tbody>
+</table>
+
+{% endblock %}

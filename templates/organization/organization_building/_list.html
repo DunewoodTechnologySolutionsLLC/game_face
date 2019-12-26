@@ -1,0 +1,34 @@
+{% if not object_list %}
+No buildings
+{% else %}
+<table class="table table-stripped table-sm">
+    <thead>
+    <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Mailing Address</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% if not object_list %}
+    No buildings for {{ organization }}
+    {% else %}
+    {% for object in object_list %}
+    <tr>
+        <td>
+            {% if object == object.organization.primary_building %}
+            ☆
+            {% endif %}
+        </td>
+        <td><a href={{ object.get_absolute_url }}>{{ object.name }}</a></td>
+        <td>{{ object.address }}</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+    <tr>
+
+    </tr>
+    </tbody>
+</table>
+{% endif %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Add an Asset</h2>
+<form method="post">{% csrf_token %}
+    <!--<div class="row">-->
+        <!--<div class="col-sm-3">{{ form.name.name }}</div>-->
+        <!--<div class="col-sm-9"><input class="form-control" id="id_{{ form.name.name }}"-->
+                                     <!--placeholder="Asset {{ form.name.name }}"></div>-->
+    <!--</div>-->
+
+    <!--<div class="row">-->
+        <!--<div class="col-sm-3">{{ form.purchase_date.name }}</div>-->
+        <!--<div class="col-sm-9"><input type="date" class="form-control" id="id_{{ form.purchase_date.name }}"-->
+                                     <!--placeholder="Asset {{ form.purchase_date.name }}"></div>-->
+    <!--</div>-->
+
+    <!--<div class="row">-->
+        <!--<div class="col-sm-3">{{ form.location.name }}</div>-->
+        <!--<div class="col-sm-9">{{ form.location }}</div>-->
+    <!--</div>-->
+
+    <!--<div class="form-check">-->
+        <!--<input class="form-check-input" type="checkbox" id="id_{{ form.is_schedulable.name }}">-->
+        <!--<label class="form-check-label" for="id_{{ form.is_schedulable.name }}">{{ form.is_schedulable.name }}</label>-->
+    <!--</div>-->
+
+    <!--<div class="form-check">-->
+        <!--<input class="form-check-input" type="checkbox" id="id_{{ form.is_deprecated.name }}">-->
+        <!--<label class="form-check-label" for="id_{{ form.is_deprecated.name }}">{{ form.is_deprecated.name }}</label>-->
+    <!--</div>-->
+
+    <!--<div class="row">-->
+        <!--<div class="col-sm-3">{{ form.asset_type.name }}</div>-->
+        <!--<div class="col-sm-9">{{ form.asset_type }}</div>-->
+    <!--</div>-->
+
+    <!--<div class="row">-->
+        <!--<div class="col-sm-3">{{ form.model.name }}</div>-->
+        <!--<div class="col-sm-9"><input class="form-control" id="id_{{ form.model.name }}"-->
+                                     <!--placeholder="Asset {{ form.model.name }}"></div>-->
+    <!--</div>-->
+
+    <!--<div class="row">-->
+        <!--<div class="col-sm-3">{{ form.organization.name }}</div>-->
+        <!--<div class="col-sm-9">{{ form.organization }}</div>-->
+    <!--</div>-->
+
+    {{ form.as_p }}
+    <a class="btn btn-primary" href="/country/create">Create Country</a>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
